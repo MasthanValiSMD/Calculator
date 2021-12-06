@@ -1,3 +1,14 @@
+
+let para = document.createElement("p");
+para.id = "description";
+para.innerHTML = "This is a task for creating a Calculator using DOM manipulation";
+document.getElementsByTagName("body")[0].appendChild(para);
+
+let H1 = document.createElement("h1")
+H1.id = "title";
+H1.innerHTML = "0";
+document.getElementsByTagName("body")[0].appendChild(H1)
+
 let div = document.createElement("div");
 div.className = "calculator-grid";
 div.id = "cal";
@@ -10,119 +21,119 @@ div.appendChild(innerDiv);
 
 var input = document.createElement("input");
 input.className = "inp";
-input.id = "input";
+input.id = "result";
 input.value = "0";
 innerDiv.appendChild(input);
 
 var btn = document.createElement("button");
 btn.className = "clear"
-btn.id = "btn1";
+btn.id = "clear";
 btn.textContent = "C";
 div.appendChild(btn);
 
 var btn = document.createElement("button");
-btn.id = "dis←";
+btn.id = "back";
 btn.value = "←";
 btn.textContent = "←";
 div.appendChild(btn);
 
 var btn = document.createElement("button");
-btn.id = "dis.";
+btn.id = ".";
 btn.className = "operator";
 btn.value = ".";
 btn.textContent = ".";
 div.appendChild(btn);
 
 var btn = document.createElement("button");
-btn.id = "dis*";
+btn.id = "*";
 btn.className = "operator";
 btn.value = "*";
 btn.textContent = "*";
 div.appendChild(btn);
 
 var btn = document.createElement("button");
-btn.id = "dis7";
+btn.id = "7";
 btn.value = "7";
 btn.textContent = "7";
 div.appendChild(btn);
 
 var btn = document.createElement("button");
-btn.id = "dis8";
+btn.id = "8";
 btn.value = "8";
 btn.textContent = "8";
 div.appendChild(btn);
 
 var btn = document.createElement("button");
-btn.id = "dis9";
+btn.id = "9";
 btn.value = "9";
 btn.textContent = "9";
 div.appendChild(btn);
 
 var btn = document.createElement("button");
-btn.id = "dis/";
+btn.id = "/";
 btn.className = "operator";
 btn.value = "/";
 btn.textContent = "/";
 div.appendChild(btn);
 
 var btn = document.createElement("button");
-btn.id = "dis4";
+btn.id = "4";
 btn.value = "4";
 btn.textContent = "4";
 div.appendChild(btn);
 
 var btn = document.createElement("button");
-btn.id = "dis5";
+btn.id = "5";
 btn.value = "5";
 btn.textContent = "5";
 div.appendChild(btn)
 
 var btn = document.createElement("button");
-btn.id = "dis6";
+btn.id = "6";
 btn.value = "6";
 btn.textContent = "6";
 div.appendChild(btn);
 
 var btn = document.createElement("button");
-btn.id = "dis-";
+btn.id = "subtract";
 btn.className = "operator";
 btn.value = "-";
 btn.textContent = "-";
 div.appendChild(btn);
 
 var btn = document.createElement("button");
-btn.id = "dis1";
+btn.id = "1";
 btn.value = "1";
 btn.textContent = "1";
 div.appendChild(btn);
 
 var btn = document.createElement("button");
-btn.id = "dis2";
+btn.id = "2";
 btn.value = "2";
 btn.textContent = "2";
 div.appendChild(btn);
 
 var btn = document.createElement("button");
-btn.id = "dis3";
+btn.id = "3";
 btn.value = "3";
 btn.textContent = "3";
 div.appendChild(btn);
 
 var btn = document.createElement("button");
-btn.id = "dis+";
+btn.id = "add";
 btn.className = "operator";
 btn.value = "+";
 btn.textContent = "+";
 div.appendChild(btn);
 
 var btn = document.createElement("button");
-btn.id = "dis0";
+btn.id = "0";
 btn.value = "0";
 btn.textContent = "0";
 div.appendChild(btn);
 
 var btn = document.createElement("button");
-btn.id = "dis00";
+btn.id = "00";
 btn.value = "00";
 btn.textContent = "00";
 div.appendChild(btn);
@@ -134,48 +145,46 @@ btn.textContent = "=";
 div.appendChild(btn);
 
 
-document.getElementById("btn1").onclick = function () { clear() };
-
+document.getElementById("clear").onclick = function () { clear() }
 function clear()
 {
-document.getElementById("input").value = ""
+document.getElementById("result").value = ""
 }
 
 
-document.getElementById("dis←").onclick = function () {back()}
+document.getElementById("back").onclick = function () {back()}
 function back() {
-    var value = document.getElementById("input").value;
-    document.getElementById("input").value = value.substr(0, value.length - 1);
+    var value = document.getElementById("result").value;
+    document.getElementById("result").value = value.substr(0, value.length - 1);
 }
 
 document.getElementById("equal").onclick = function () { equal() };
 
 function equal() {
-    let x = document.getElementById("input").value;
+    let x = document.getElementById("result").value;
     let y = eval(x);
-    document.getElementById("input").value = y;
+    document.getElementById("result").value = y;
 }
 
-document.getElementById("dis.").onclick = function () { dis('.')}
-document.getElementById("dis*").onclick = function () { dis('*')}
-document.getElementById("dis7").onclick = function () { dis('7')}
-document.getElementById("dis8").onclick = function () { dis('8')}
-document.getElementById("dis9").onclick = function () { dis('9')}
-document.getElementById("dis/").onclick = function () { dis('/')}
-document.getElementById("dis4").onclick = function () { dis('4')}
-document.getElementById("dis5").onclick = function () { dis('5')}
-document.getElementById("dis6").onclick = function () { dis('6')}
-document.getElementById("dis-").onclick = function () { dis('-')}
-document.getElementById("dis1").onclick = function () { dis('1')}
-document.getElementById("dis2").onclick = function () { dis('2')}
-document.getElementById("dis3").onclick = function () { dis('3')}
-document.getElementById("dis+").onclick = function () { dis('+')}
-document.getElementById("dis0").onclick = function () { dis('0')}
-document.getElementById("dis00").onclick = function () { dis('00')}
+document.getElementById(".").onclick = function () { dis('.')}
+document.getElementById("*").onclick = function () { dis('*')}
+document.getElementById("7").onclick = function () { dis('7')}
+document.getElementById("8").onclick = function () { dis('8')}
+document.getElementById("9").onclick = function () { dis('9')}
+document.getElementById("/").onclick = function () { dis('/')}
+document.getElementById("4").onclick = function () { dis('4')}
+document.getElementById("5").onclick = function () { dis('5')}
+document.getElementById("6").onclick = function () { dis('6')}
+document.getElementById("subtract").onclick = function () { dis('-')}
+document.getElementById("1").onclick = function () { dis('1')}
+document.getElementById("2").onclick = function () { dis('2')}
+document.getElementById("3").onclick = function () { dis('3')}
+document.getElementById("add").onclick = function () { dis('+')}
+document.getElementById("0").onclick = function () { dis('0')}
+document.getElementById("00").onclick = function () { dis('00')}
 
 
 
 function dis(val) {
-    document.getElementById("input").value += val
+    document.getElementById("result").value += val
 }
-
